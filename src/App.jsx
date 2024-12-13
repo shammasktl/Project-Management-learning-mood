@@ -9,10 +9,29 @@ function App() {
     projects: []
   });
 
+  const handleStartAddProject = () => {
+    setProjectsState(prevState =>  {
+      return {
+        ...prevState,
+        selectedProjecId: null,
+
+      }
+    })
+  }
+
+  let projectContent;
+
+  if (projectsState.selectedProjecId === undefined) {
+    projectContent = <NoProjectSelected onStartAddProject={handleStartAddProject} />
+  }
+  else if (projectsState.selectedProjecId === null) {
+    projectContent = <NewProject />
+  }
+
   return (
     <main className="min-h-screen flex gap-10">
-      <SideBar />
-      <NoProjectSelected />
+      <SideBar onStartAddProject={handleStartAddProject}/>
+      {projectContent}
     </main>
   );
 }
