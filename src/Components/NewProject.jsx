@@ -7,6 +7,12 @@ const NewProject = () => {
   const descriptionRef = useRef(null)
   const dueDateRef = useRef(null)
 
+  const handleSave = () => {
+    const enteredTitle = titleRef.current.value
+    const enteredDescription = descriptionRef.current.value
+    const enteredDueDate = dueDateRef.current.value
+  }
+
   return (
     <div className='w-[35rem] mt-16'>
       <menu className='flex items-center justify-end gap-4 my-4 '>
