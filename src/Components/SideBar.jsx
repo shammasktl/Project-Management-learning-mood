@@ -10,7 +10,7 @@ const SideBar = ({onStartAddProject,projects}) => {
           + Add Project
         </Button>
       </div>
-      <ul>
+      <ul className='flex gap-3 flex-col mt-10'>
         {
           projects.map((project) => {
             return (
